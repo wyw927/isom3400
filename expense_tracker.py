@@ -15,16 +15,16 @@ with st.form("expenses_form"):
   description = st.text_input("Description")
 
 
-submitted = st.form_submit_button("Add Expanse")
-if submitted :
-  new_expense = pd.DataFrame({
-    'Date':[date],
-    'Category':[category],
-    'Amount':[amount],
-    'Description':[description]
-  })
-  st.session_state.expenses = pd.concat([st.session_state.expenses, new_expense),ignore _index=True)
-  st.success("Expanse added successfully!")
+  submitted = st.form_submit_button("Add Expanse")
+  if submitted :
+    new_expense = pd.DataFrame({
+      'Date':[date],
+      'Category':[category],
+      'Amount':[amount],
+      'Description':[description]
+    })
+    st.session_state.expenses = pd.concat([st.session_state.expenses, new_expense),ignore _index=True)
+    st.success("Expanse added successfully!")
 
 
 if not st.session_state.expenses.empty:
